@@ -87,7 +87,6 @@ class VpnProfileDetailActivity : AppCompatActivity() {
 		val vpnProfile = VpnProfile(
 			binding.vpnProfileName.value(),
 			binding.vpnProfileGateway.value(),
-			binding.vpnProfileUsername.value(),
 			selectedVpnType,
 		)
 		setVpnProfileFields(vpnProfile)
@@ -98,7 +97,6 @@ class VpnProfileDetailActivity : AppCompatActivity() {
 	private fun updateVpnProfile(vpnProfile: VpnProfile) {
 		vpnProfile.name = binding.vpnProfileName.value()
 		vpnProfile.gateway = binding.vpnProfileGateway.value()
-		vpnProfile.username = binding.vpnProfileUsername.value()
 		vpnProfile.vpnType = selectedVpnType
 		setVpnProfileFields(vpnProfile)
 
@@ -106,6 +104,7 @@ class VpnProfileDetailActivity : AppCompatActivity() {
 	}
 
 	private fun setVpnProfileFields(vpnProfile: VpnProfile) {
+		vpnProfile.username = binding.vpnProfileUsername.valueOrNull()
 		vpnProfile.password = binding.vpnProfilePassword.valueOrNull()
 		vpnProfile.certificate = binding.vpnProfileCertificate.valueOrNull()
 		vpnProfile.userCertificate = binding.vpnProfileUserCertificate.valueOrNull()

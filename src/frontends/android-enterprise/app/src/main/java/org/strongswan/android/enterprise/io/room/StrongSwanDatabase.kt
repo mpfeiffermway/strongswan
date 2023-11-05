@@ -17,6 +17,7 @@ import org.strongswan.android.enterprise.io.room.dao.VpnProfileDao
 	autoMigrations = [
 		AutoMigration(from = 1, to = 2),
 		AutoMigration(from = 2, to = 3),
+		AutoMigration(from = 3, to = 4),
 	],
 )
 @TypeConverters(
@@ -24,7 +25,7 @@ import org.strongswan.android.enterprise.io.room.dao.VpnProfileDao
 )
 abstract class StrongSwanDatabase : RoomDatabase() {
 	companion object {
-		const val SCHEMA_VERSION = 3
+		const val SCHEMA_VERSION = 4
 	}
 
 	abstract fun vpnProfileDao(): VpnProfileDao

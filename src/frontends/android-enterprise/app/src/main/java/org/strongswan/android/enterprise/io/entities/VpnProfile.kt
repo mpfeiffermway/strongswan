@@ -8,7 +8,6 @@ import androidx.room.PrimaryKey
 class VpnProfile(
 	var name: String,
 	var gateway: String,
-	var username: String,
 	@ColumnInfo(name = "vpn_type", defaultValue = "")
 	var vpnType: VpnType,
 ) {
@@ -19,6 +18,8 @@ class VpnProfile(
 	@ColumnInfo(name = ID)
 	@PrimaryKey(autoGenerate = true)
 	var id: Long? = null
+
+	var username: String? = null
 
 	var password: String? = null
 
