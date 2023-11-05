@@ -2,9 +2,15 @@ package org.strongswan.android.enterprise.io.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "vpnprofile")
+@Entity(
+	tableName = "vpnprofile",
+	indices = [
+		Index(value = ["_uuid"], unique = true)
+	]
+)
 class VpnProfile(
 	var name: String,
 	var gateway: String,
@@ -18,6 +24,9 @@ class VpnProfile(
 	@ColumnInfo(name = ID)
 	@PrimaryKey(autoGenerate = true)
 	var id: Long? = null
+
+	@ColumnInfo(name = "_uuid")
+	var uuid: String? = null
 
 	var username: String? = null
 
