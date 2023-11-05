@@ -90,4 +90,15 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <EditText
+        android:id="@+id/vpn_profile_mtu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/vpn_profile_mtu_hint"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vpn_profile_type_layout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

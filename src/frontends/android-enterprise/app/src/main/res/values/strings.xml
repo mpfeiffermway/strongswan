@@ -24,6 +24,7 @@
     <string name="vpn_profile_user_certificate_hint">User certificate alias</string>
     <string name="vpn_profile_type_hint">VPN type</string>
     <string name="vpn_profile_deleted">VPN profile %1$s deleted</string>
+    <string name="vpn_profile_mtu_hint">MTU</string>
 
     <!-- VpnType -->
     <string name="vpn_type_ikev2_eap">IKEv2 EAP</string>
