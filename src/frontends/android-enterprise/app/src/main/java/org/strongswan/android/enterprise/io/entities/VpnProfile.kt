@@ -32,6 +32,9 @@ class VpnProfile(
 
 	var port: Int? = null
 
+	@ColumnInfo(name = "split_tunneling")
+	var splitTunneling: Int? = null
+
 	override fun equals(other: Any?): Boolean {
 		if (this === other) {
 			return true

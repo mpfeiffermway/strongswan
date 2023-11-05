@@ -112,4 +112,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vpn_profile_mtu" />
 
+    <EditText
+        android:id="@+id/vpn_profile_split_tunneling"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/vpn_profile_split_tunneling_hint"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vpn_profile_port" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
