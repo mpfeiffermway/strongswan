@@ -9,7 +9,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import org.strongswan.android.enterprise.R
 import org.strongswan.android.enterprise.databinding.ActivityVpnProfileDetailBinding
 import org.strongswan.android.enterprise.io.entities.VpnProfile
+import org.strongswan.android.enterprise.io.entities.VpnType
 import org.strongswan.android.enterprise.ui.viewModels.VpnProfileDetailViewModel
+import org.strongswan.android.enterprise.ui.widget.NamedValue
 
 @AndroidEntryPoint
 class VpnProfileDetailActivity : AppCompatActivity() {
@@ -19,10 +21,24 @@ class VpnProfileDetailActivity : AppCompatActivity() {
 	private lateinit var binding: ActivityVpnProfileDetailBinding
 
 	private var vpnProfile: VpnProfile? = null
+	private var selectedVpnType = VpnType.IKEV2_EAP
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		binding = setContentView(ActivityVpnProfileDetailBinding::inflate)
+
+		val vpnTypeArrayAdapter = NamedValue.adapter(
+			this,
+			android.R.layout.simple_dropdown_item_1line,
+			VpnType.values()
+		)
+
+		binding.vpnProfileType.setAdapter(vpnTypeArrayAdapter)
+		binding.vpnProfileType.setOnItemClickListener { _, _, position, _ ->
+			vpnTypeArrayAdapter.getItem(position)?.let {
+				selectedVpnType = it.enum
+			}
+		}
 
 		intent.extras?.getLong(VpnProfile.ID)?.let { id ->
 			viewModel.getVpnProfile(id).observe(this) { profile ->
@@ -55,19 +71,24 @@ class VpnProfileDetailActivity : AppCompatActivity() {
 	}
 
 	private fun showVpnProfile(vpnProfile: VpnProfile) {
+		selectedVpnType = vpnProfile.vpnType
+		val vpnTypeName = getString(selectedVpnType.nameResId)
+
 		binding.vpnProfileName.setText(vpnProfile.name)
 		binding.vpnProfileGateway.setText(vpnProfile.gateway)
 		binding.vpnProfileUsername.setText(vpnProfile.username)
 		binding.vpnProfilePassword.setText(vpnProfile.password)
 		binding.vpnProfileCertificate.setText(vpnProfile.certificate)
 		binding.vpnProfileUserCertificate.setText(vpnProfile.userCertificate)
+		binding.vpnProfileType.setText(vpnTypeName, false)
 	}
 
 	private fun createNewVpnProfile() {
 		val vpnProfile = VpnProfile(
 			binding.vpnProfileName.value(),
 			binding.vpnProfileGateway.value(),
-			binding.vpnProfileUsername.value()
+			binding.vpnProfileUsername.value(),
+			selectedVpnType,
 		)
 		setVpnProfileFields(vpnProfile)
 
@@ -78,6 +99,7 @@ class VpnProfileDetailActivity : AppCompatActivity() {
 		vpnProfile.name = binding.vpnProfileName.value()
 		vpnProfile.gateway = binding.vpnProfileGateway.value()
 		vpnProfile.username = binding.vpnProfileUsername.value()
+		vpnProfile.vpnType = selectedVpnType
 		setVpnProfileFields(vpnProfile)
 
 		viewModel.updateVpnProfile(vpnProfile)

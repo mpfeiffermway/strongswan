@@ -22,6 +22,14 @@
     <string name="vpn_profile_password_hint">Password</string>
     <string name="vpn_profile_certificate_hint">CA certificate alias</string>
     <string name="vpn_profile_user_certificate_hint">User certificate alias</string>
+    <string name="vpn_profile_type_hint">VPN type</string>
     <string name="vpn_profile_deleted">VPN profile %1$s deleted</string>
+
+    <!-- VpnType -->
+    <string name="vpn_type_ikev2_eap">IKEv2 EAP</string>
+    <string name="vpn_type_ikev2_cert">IKEv2 Cert</string>
+    <string name="vpn_type_ikev2_cert_eap">IKEv2 Cert EAP</string>
+    <string name="vpn_type_ikev2_eap_tls">IKEv2 EAP/TLS</string>
+    <string name="vpn_type_ikev2_byod_eap">IKEv2 BYOD EAP</string>
 
 </resources>

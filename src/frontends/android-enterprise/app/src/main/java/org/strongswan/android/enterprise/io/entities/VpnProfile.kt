@@ -9,6 +9,8 @@ class VpnProfile(
 	var name: String,
 	var gateway: String,
 	var username: String,
+	@ColumnInfo(name = "vpn_type", defaultValue = "")
+	var vpnType: VpnType,
 ) {
 	companion object {
 		const val ID = "_id"
