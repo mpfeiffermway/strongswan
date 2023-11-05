@@ -22,6 +22,9 @@ class VpnProfile(
 
 	var certificate: String? = null
 
+	@ColumnInfo(name = "user_certificate")
+	var userCertificate: String? = null
+
 	override fun equals(other: Any?): Boolean {
 		if (this === other) {
 			return true

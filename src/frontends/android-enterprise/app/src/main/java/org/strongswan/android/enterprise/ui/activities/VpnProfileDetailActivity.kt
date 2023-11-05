@@ -60,6 +60,7 @@ class VpnProfileDetailActivity : AppCompatActivity() {
 		binding.vpnProfileUsername.setText(vpnProfile.username)
 		binding.vpnProfilePassword.setText(vpnProfile.password)
 		binding.vpnProfileCertificate.setText(vpnProfile.certificate)
+		binding.vpnProfileUserCertificate.setText(vpnProfile.userCertificate)
 	}
 
 	private fun createNewVpnProfile() {
@@ -68,9 +69,7 @@ class VpnProfileDetailActivity : AppCompatActivity() {
 			binding.vpnProfileGateway.value(),
 			binding.vpnProfileUsername.value()
 		)
-
-		vpnProfile.password = binding.vpnProfilePassword.valueOrNull()
-		vpnProfile.certificate = binding.vpnProfileCertificate.valueOrNull()
+		setVpnProfileFields(vpnProfile)
 
 		viewModel.insertVpnProfile(vpnProfile)
 	}
@@ -79,9 +78,14 @@ class VpnProfileDetailActivity : AppCompatActivity() {
 		vpnProfile.name = binding.vpnProfileName.value()
 		vpnProfile.gateway = binding.vpnProfileGateway.value()
 		vpnProfile.username = binding.vpnProfileUsername.value()
-		vpnProfile.password = binding.vpnProfilePassword.valueOrNull()
-		vpnProfile.certificate = binding.vpnProfileCertificate.valueOrNull()
+		setVpnProfileFields(vpnProfile)
 
 		viewModel.updateVpnProfile(vpnProfile)
+	}
+
+	private fun setVpnProfileFields(vpnProfile: VpnProfile) {
+		vpnProfile.password = binding.vpnProfilePassword.valueOrNull()
+		vpnProfile.certificate = binding.vpnProfileCertificate.valueOrNull()
+		vpnProfile.userCertificate = binding.vpnProfileUserCertificate.valueOrNull()
 	}
 }

@@ -61,4 +61,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vpn_profile_password" />
 
+    <EditText
+        android:id="@+id/vpn_profile_user_certificate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/vpn_profile_user_certificate_hint"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vpn_profile_certificate" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

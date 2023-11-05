@@ -21,6 +21,7 @@
     <string name="vpn_profile_username_hint">Username</string>
     <string name="vpn_profile_password_hint">Password</string>
     <string name="vpn_profile_certificate_hint">CA certificate alias</string>
+    <string name="vpn_profile_user_certificate_hint">User certificate alias</string>
     <string name="vpn_profile_deleted">VPN profile %1$s deleted</string>
 
 </resources>
