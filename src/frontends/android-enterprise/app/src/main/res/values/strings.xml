@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- app -->
+    <string name="app_name">strongSwan Enterprise VPN Client</string>
+
+    <!-- actions -->
+    <string name="action_add">Add VPN profile</string>
+    <string name="action_edit">Edit VPN profile</string>
+    <string name="action_undo">Undo</string>
+
+    <!-- activities -->
+    <string name="activity_name_main">strongSwan</string>
+
+    <!-- menus -->
+    <string name="menu_add_vpn_profile">Add VPN profile</string>
+    <string name="menu_save_vpn_profile">Save</string>
+
+    <!-- VpnProfileDetail -->
+    <string name="vpn_profile_name_hint">Profile name</string>
+    <string name="vpn_profile_gateway_hint">Gateway</string>
+    <string name="vpn_profile_username_hint">Username</string>
+    <string name="vpn_profile_password_hint">Password</string>
+    <string name="vpn_profile_certificate_hint">CA certificate alias</string>
+    <string name="vpn_profile_deleted">VPN profile %1$s deleted</string>
+
+</resources>

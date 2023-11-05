@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="@dimen/activity_margin_horizontal"
+    android:paddingVertical="@dimen/activity_margin_vertical">
+
+    <EditText
+        android:id="@+id/vpn_profile_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/vpn_profile_name_hint"
+        android:importantForAutofill="no"
+        android:inputType="textCapSentences"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/vpn_profile_gateway"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/vpn_profile_gateway_hint"
+        android:importantForAutofill="no"
+        android:inputType="textUri"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vpn_profile_name" />
+
+    <EditText
+        android:id="@+id/vpn_profile_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="username"
+        android:hint="@string/vpn_profile_username_hint"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vpn_profile_gateway" />
+
+    <EditText
+        android:id="@+id/vpn_profile_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="password"
+        android:hint="@string/vpn_profile_password_hint"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vpn_profile_username" />
+
+    <EditText
+        android:id="@+id/vpn_profile_certificate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/vpn_profile_certificate_hint"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vpn_profile_password" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
