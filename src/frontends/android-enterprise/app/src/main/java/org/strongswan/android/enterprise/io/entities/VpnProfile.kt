@@ -30,6 +30,8 @@ class VpnProfile(
 
 	var mtu: Int? = null
 
+	var port: Int? = null
+
 	override fun equals(other: Any?): Boolean {
 		if (this === other) {
 			return true

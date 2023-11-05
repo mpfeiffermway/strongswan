@@ -82,6 +82,7 @@ class VpnProfileDetailActivity : AppCompatActivity() {
 		binding.vpnProfileUserCertificate.setText(vpnProfile.userCertificate)
 		binding.vpnProfileType.setText(vpnTypeName, false)
 		binding.vpnProfileMtu.setText(vpnProfile.mtu?.toString())
+		binding.vpnProfilePort.setText(vpnProfile.port?.toString())
 	}
 
 	private fun createNewVpnProfile() {
@@ -110,5 +111,6 @@ class VpnProfileDetailActivity : AppCompatActivity() {
 		vpnProfile.certificate = binding.vpnProfileCertificate.valueOrNull()
 		vpnProfile.userCertificate = binding.vpnProfileUserCertificate.valueOrNull()
 		vpnProfile.mtu = binding.vpnProfileMtu.value().toIntOrNull()
+		vpnProfile.port = binding.vpnProfilePort.value().toIntOrNull()
 	}
 }
