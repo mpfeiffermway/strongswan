@@ -84,6 +84,8 @@ class VpnProfileDetailActivity : AppCompatActivity() {
 		binding.vpnProfileMtu.setText(vpnProfile.mtu?.toString())
 		binding.vpnProfilePort.setText(vpnProfile.port?.toString())
 		binding.vpnProfileSplitTunneling.setText(vpnProfile.splitTunneling?.toString())
+		binding.vpnProfileLocalId.setText(vpnProfile.localId)
+		binding.vpnProfileRemoteId.setText(vpnProfile.remoteId)
 	}
 
 	private fun createNewVpnProfile() {
@@ -114,5 +116,7 @@ class VpnProfileDetailActivity : AppCompatActivity() {
 		vpnProfile.mtu = binding.vpnProfileMtu.value().toIntOrNull()
 		vpnProfile.port = binding.vpnProfilePort.value().toIntOrNull()
 		vpnProfile.splitTunneling = binding.vpnProfileSplitTunneling.value().toIntOrNull()
+		vpnProfile.localId = binding.vpnProfileLocalId.valueOrNull()
+		vpnProfile.remoteId = binding.vpnProfileRemoteId.valueOrNull()
 	}
 }
